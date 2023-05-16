@@ -7,7 +7,5 @@ services:
     build:
       context: .
       target: production
-    volumes:
-      - ./src:/var/www/pokedex
     ports:
       - 3000:3000
