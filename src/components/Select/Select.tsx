@@ -11,7 +11,11 @@ const Select: React.FC<SelectType> = ({ name, options, onChange }) => {
   const [searchParams] = useSearchParams();
 
   return (
-    <select onChange={onChange} name={name} className="bg-white p-3 rounded-lg">
+    <select
+      onChange={onChange}
+      name={name}
+      className="bg-white py-3 rounded-lg outline-none"
+    >
       {options.map((option, index) => {
         return (
           <option

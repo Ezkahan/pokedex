@@ -24,7 +24,7 @@ const Header: React.FC<HeaderType> = ({ handleSelect }) => {
   };
 
   return (
-    <header className="flex items-center gap-5 mt-5 mb-10">
+    <header className="flex xl:flex-row flex-col xl:items-center gap-5 mt-5 mb-10">
       <form onSubmit={handleSubmit} className="flex items-center gap-2 w-full">
         <Input
           id="search"
@@ -35,13 +35,13 @@ const Header: React.FC<HeaderType> = ({ handleSelect }) => {
         />
         <button
           type="submit"
-          className="bg-slate-700 text-white px-5 py-2.5 rounded-lg"
+          className="bg-slate-700 text-white px-4 py-2.5 rounded-lg"
         >
           Search
         </button>
       </form>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 bg-white rounded-lg px-4">
         <p className="text-gray-500">Show:</p>
         <Select name="perPage" onChange={handleSelect} options={options} />
         <p>pokemons</p>

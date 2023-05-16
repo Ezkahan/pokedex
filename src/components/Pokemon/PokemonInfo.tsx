@@ -8,7 +8,7 @@ const PokemonInfo: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className="bg-white p-5 m-5 shadow-lg shadow-slate-200 rounded-lg flex gap-5">
+      <div className="bg-white p-5 m-5 shadow-lg shadow-slate-200 rounded-lg flex flex-col xl:flex-row gap-5">
         <img
           src={
             pokemon.data?.sprites?.other?.dream_world?.front_default ||

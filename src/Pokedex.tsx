@@ -43,7 +43,7 @@ const Pokedex: React.FC = () => {
 
   return (
     <AppLayout>
-      <section className="p-5 mx-10">
+      <section className="p-5 xl:mx-10">
         <Header handleSelect={handleSelect} />
 
         <motion.main
