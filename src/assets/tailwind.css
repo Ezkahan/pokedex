@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: Pokemon;
+        src: url('./fonts/Pokemon.ttf');
+    }
+
+    @font-face {
+        font-family: Montserrat-Regular;
+        src: url('./fonts/Montserrat-Regular.ttf');
+    }
+
+    @font-face {
+        font-family: Montserrat-Bold;
+        src: url('./fonts/Montserrat-Bold.ttf');
+    }
+
+    ::-webkit-scrollbar {
+        @apply bg-transparent w-1.5 h-1
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-pokedex
+    }
+
+    body {
+        @apply bg-slate-100 text-slate-700 font-montserrat-regular
+    }
+
+}
+.grass {
+    background-color: #afeab1;
+    color: #3d9a41;
+}
+.ground {
+    background-color: #f2d4c2;
+    color: #c48965;
+}
+.fire {
+    background-color: #feeaa7;
+    color: #c2a33e;
+}
+.water {
+    background-color: #b3e1f5;
+    color: #398caf;
+}
+.bug {
+    background-color: #ffdbb7;
+    color: #ae7032;
+}
+.poison {
+    background-color: #cdd4f9;
+    color: #4e5899;
+}
+.electric {
+    background-color: #97edf1;
+    color: #4ca8ad;
+}
+.fairy {
+    background-color: #f197a2;
+    color: #a5545e;
+}
+.fighting {
+    background-color: #96b8d6;
+    color: #4d708f;
+}
+.normal {
+    background-color: white;
+    color: #949090;
+}
