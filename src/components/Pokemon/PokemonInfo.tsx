@@ -8,7 +8,7 @@ const PokemonInfo: React.FC = () => {
 
   return (
     <AppLayout>
-      <div className="bg-white p-5 m-5 shadow-lg shadow-slate-200 rounded-lg flex flex-col xl:flex-row gap-5">
+      <section className="bg-white p-5 m-5 shadow-lg shadow-slate-200 rounded-lg flex flex-col xl:flex-row gap-5">
         <img
           src={
             pokemon.data?.sprites?.other?.dream_world?.front_default ||
@@ -16,42 +16,88 @@ const PokemonInfo: React.FC = () => {
           }
           alt="pokemon"
           loading="lazy"
-          className="p-5"
+          className="p-5 w-80 h-80"
         />
-        <div className="w-full space-y-2">
-          <p className="xl:text-2xl text-xl font-montserrat-bold text-pokedex">
-            <strong>Name:</strong> <span>{pokemon.data?.name}</span>
-          </p>
-          <p>
-            <strong>Species:</strong> {pokemon.data?.species?.name}
-          </p>
-          <p>
-            <strong>Types:</strong>
-            {pokemon.data?.types?.map((singleType, i) => (
-              <span key={i} className={"poke-types " + singleType.type?.name}>
-                {singleType.type?.name}
-              </span>
-            ))}
-          </p>
-          <p>
-            <strong>Abilities:</strong>
-            {pokemon.data?.abilities
-              ?.map((singleAbility) => singleAbility.ability?.name)
-              .join(", ")}
-          </p>
-          <p>
-            <strong>Moves:</strong>
-            {pokemon.data?.moves
-              ?.map((singleMove) => singleMove.move?.name)
-              .slice(0, 3)
-              .join(", ") || "Unknown"}
-          </p>
-          <p>
-            <strong>Height:</strong> {Number(pokemon.data?.height) / 10}m,
-            <strong>Weight:</strong> {Number(pokemon.data?.weight) / 10}kg
-          </p>
-        </div>
-      </div>
+
+        <main>
+          <h1 className="xl:text-3xl text-xl font-montserrat-bold text-pokedex capitalize">
+            {pokemon.data?.name}
+          </h1>
+
+          <table className="w-full mt-5">
+            <tbody>
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Species:</strong>
+                </td>
+                <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
+                  {pokemon.data?.species?.name}
+                </td>
+              </tr>
+
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Types:</strong>
+                </td>
+
+                <td className="flex gap-2 rounded-tr-lg rounded-br-lg">
+                  {pokemon.data?.types?.map((singleType, i) => (
+                    <td
+                      key={i}
+                      className={"rounded px-2 mt-1.5 " + singleType.type?.name}
+                    >
+                      {singleType.type?.name}
+                    </td>
+                  ))}
+                </td>
+              </tr>
+
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Abilities:</strong>
+                </td>
+
+                <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
+                  {pokemon.data?.abilities
+                    ?.map((singleAbility) => singleAbility.ability?.name)
+                    .join(", ")}
+                </td>
+              </tr>
+
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Moves:</strong>
+                </td>
+
+                <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
+                  {pokemon.data?.moves
+                    ?.map((singleMove) => singleMove.move?.name)
+                    .slice(0, 3)
+                    .join(", ") || "Unknown"}
+                </td>
+              </tr>
+
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Height:</strong>
+                </td>
+                <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
+                  {Number(pokemon.data?.height) / 10}m,
+                </td>
+              </tr>
+
+              <tr className="odd:bg-slate-100">
+                <td className="px-4 py-2 rounded-tl-lg rounded-bl-lg">
+                  <strong className="text-gray-400">Weight:</strong>
+                </td>
+                <td className="px-4 py-2 rounded-tr-lg rounded-br-lg">
+                  {Number(pokemon.data?.weight) / 10}kg
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+      </section>
     </AppLayout>
   );
 };
