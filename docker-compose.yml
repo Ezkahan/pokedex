@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: pokedex
+    image: pokedex
+    build:
+      context: .
+      target: production
+    volumes:
+      - ./src:/var/www/pokedex
+    ports:
+      - 3000:3000
